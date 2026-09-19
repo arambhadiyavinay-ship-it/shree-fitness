@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHREE FITNESS | Premium Fitness Studio</title>
+<style>
+:root{--bg:#070a0f;--card:#101620;--text:#f8fafc;--muted:#9aa5b5;--accent:#55f28b;--line:#ffffff14}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+a{text-decoration:none;color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;padding:17px 7%;display:flex;justify-content:space-between;align-items:center;background:#070a0fcc;backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.logo{font-weight:900;letter-spacing:2px}.logo span{color:var(--accent)}
+.navlinks{display:flex;gap:25px;color:#cbd5e1;font-size:14px}.navlinks a:hover{color:var(--accent)}
+.menu{display:none;background:none;border:0;color:white;font-size:25px}
+.hero{min-height:760px;padding:160px 7% 100px;display:flex;align-items:center;position:relative;overflow:hidden;background:radial-gradient(circle at 82% 32%,#1a9b5938,transparent 28%),radial-gradient(circle at 65% 90%,#55f28b14,transparent 30%),linear-gradient(120deg,#070a0f,#0c141d)}
+.hero:after{content:"";position:absolute;width:420px;height:420px;border:1px solid #55f28b20;border-radius:50%;right:-100px;top:150px;box-shadow:0 0 100px #55f28b12}
+.hero-content{max-width:760px;position:relative;z-index:2}
+.badge{display:inline-block;padding:8px 14px;border:1px solid #55f28b55;background:#55f28b10;color:#a7f3c0;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:1.5px}
+h1{font-size:clamp(48px,8vw,92px);line-height:.92;letter-spacing:-4px;margin:22px 0}
+h1 span{color:var(--accent)}
+.hero p{max-width:600px;color:var(--muted);font-size:18px;margin-bottom:30px}
+.btn{display:inline-block;padding:14px 21px;border-radius:11px;background:var(--accent);color:#06100a;font-weight:900;margin:5px 7px 5px 0;box-shadow:0 12px 35px #55f28b1f}
+.btn.secondary{background:#ffffff08;color:#fff;border:1px solid var(--line);box-shadow:none}
+section{padding:85px 7%}
+.section-title{text-align:center;margin-bottom:42px}.section-title small{color:var(--accent);font-weight:900;letter-spacing:2px}.section-title h2{font-size:40px;margin:5px 0}.section-title p{color:var(--muted)}
+.grid{max-width:1150px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:linear-gradient(145deg,#111a25,#0c1119);border:1px solid var(--line);border-radius:22px;padding:27px;transition:.25s}
+.card:hover{transform:translateY(-7px);border-color:#55f28b55}.icon{font-size:34px;margin-bottom:15px}.card h3{margin-bottom:8px}.card p{color:var(--muted);font-size:14px}
+.stats{max-width:1050px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.stat{padding:28px;text-align:center;background:#0d131b;border-right:1px solid var(--line)}.stat:last-child{border:0}.stat b{font-size:31px;color:var(--accent)}.stat p{color:var(--muted);font-size:13px}
+.trainers .card{text-align:center}.avatar{width:92px;height:92px;border-radius:50%;margin:0 auto 16px;background:linear-gradient(135deg,#233044,#55f28b);display:grid;place-items:center;font-size:38px}
+.tag{display:inline-block;margin-top:12px;color:#a7f3c0;background:#55f28b12;padding:5px 9px;border-radius:20px;font-size:11px}
+.gallery{max-width:1150px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;grid-auto-rows:180px;gap:12px}
+.photo{border-radius:18px;border:1px solid var(--line);display:flex;align-items:end;padding:18px;font-weight:900;background:linear-gradient(145deg,#172333,#0e141d);position:relative;overflow:hidden}
+.photo:before{content:"FIT";position:absolute;font-size:90px;font-weight:900;color:#ffffff08;right:10px;top:5px}.photo.big{grid-row:span 2;background:linear-gradient(145deg,#153226,#0d1715)}
+.pricing{max-width:1050px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.price{background:#101722;border:1px solid var(--line);border-radius:22px;padding:30px}.price.featured{border-color:#55f28b;box-shadow:0 0 40px #55f28b0d}.price h3{font-size:21px}.amount{font-size:39px;font-weight:900;margin:14px 0;color:#fff}.amount span{font-size:13px;color:var(--muted);font-weight:500}.price li{list-style:none;color:#b8c1ce;margin:9px 0;font-size:14px}.price li:before{content:"✓";color:var(--accent);font-weight:900;margin-right:8px}
+.reviews{max-width:1050px;margin:auto}.review{background:#101620;border:1px solid var(--line);padding:25px;border-radius:20px}.stars{color:#ffd65a;letter-spacing:3px;margin-bottom:10px}.review p{color:#c4ccd7}.review small{display:block;color:#7f8a9b;margin-top:14px}
+.booking{background:linear-gradient(135deg,#0e1c16,#07100c);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.form{max-width:650px;margin:auto;background:#0b1118;border:1px solid var(--line);padding:25px;border-radius:22px}.form input,.form select{width:100%;padding:14px;margin:7px 0;background:#111a24;color:white;border:1px solid var(--line);border-radius:10px;outline:none}.form .btn{border:0;cursor:pointer;width:100%;margin-top:10px}
+.map{max-width:1050px;margin:auto;border:1px solid var(--line);border-radius:22px;padding:35px;text-align:center;background:#0e151e}.map p{color:var(--muted);margin:8px 0 20px}
+.contact{text-align:center}.contact p{color:var(--muted);margin:10px auto 25px}
+footer{text-align:center;padding:25px;color:#657184;border-top:1px solid var(--line);font-size:12px}
+#toast{position:fixed;right:18px;bottom:18px;background:#132018;border:1px solid #55f28b66;color:white;padding:14px 18px;border-radius:12px;display:none;z-index:50}
+@media(max-width:700px){.navlinks{display:none}.menu{display:block}.hero{min-height:700px}.stats{grid-template-columns:1fr 1fr}.stat{border-bottom:1px solid var(--line)}.gallery{grid-template-columns:1fr 1fr}.photo.big{grid-row:span 1}.pricing{grid-template-columns:1fr}.section-title h2{font-size:32px}h1{letter-spacing:-2px}}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="logo">SHREE<span>FITNESS</span></div>
+<div class="navlinks"><a href="#services">Services</a><a href="#trainers">Trainers</a><a href="#gallery">Gallery</a><a href="#plans">Plans</a><a href="#contact">Contact</a></div>
+<button class="menu" onclick="alert('Use the sections below to explore the website.')">☰</button>
+</nav>
+
+<header class="hero">
+<div class="hero-content">
+<div class="badge">PREMIUM FITNESS STUDIO</div>
+<h1>BUILD YOUR <span>STRONGEST</span> SELF.</h1>
+<p>Premium training, expert coaches and a community built to help you become stronger, fitter and more confident.</p>
+<a class="btn" href="#booking">Book Free Trial →</a>
+<a class="btn secondary" href="#plans">View Memberships</a>
+</div>
+</header>
+
+<section>
+<div class="stats">
+<div class="stat"><b>500+</b><p>Active Members</p></div><div class="stat"><b>8+</b><p>Expert Trainers</p></div><div class="stat"><b>25+</b><p>Weekly Classes</p></div><div class="stat"><b>5★</b><p>Member Experience</p></div>
+</div>
+</section>
+
+<section id="services">
+<div class="section-title"><small>WHAT WE DO</small><h2>Train With Purpose</h2><p>Everything you need to reach your fitness goals.</p></div>
+<div class="grid">
+<div class="card"><div class="icon">🏋️</div><h3>Strength Training</h3><p>Structured workouts to build strength, muscle and confidence.</p></div>
+<div class="card"><div class="icon">🔥</div><h3>Fat Loss</h3><p>Goal-focused training and guidance for sustainable progress.</p></div>
+<div class="card"><div class="icon">🥊</div><h3>Personal Training</h3><p>One-to-one coaching designed around your body and goals.</p></div>
+<div class="card"><div class="icon">⚡</div><h3>Functional Fitness</h3><p>Improve mobility, stamina and everyday performance.</p></div>
+</div>
+</section>
+
+<section class="trainers" id="trainers">
+<div class="section-title"><small>OUR TEAM</small><h2>Meet The Trainers</h2></div>
+<div class="grid">
+<div class="card"><div class="avatar">💪</div><h3>Rahul Patel</h3><p>Strength & Conditioning Coach</p><span class="tag">7+ Years Experience</span></div>
+<div class="card"><div class="avatar">🏋️</div><h3>Neha Shah</h3><p>Fitness & Weight Loss Coach</p><span class="tag">5+ Years Experience</span></div>
+<div class="card"><div class="avatar">🥊</div><h3>Arjun Mehta</h3><p>Functional Training Coach</p><span class="tag">6+ Years Experience</span></div>
+</div>
+</section>
+
+<section id="gallery">
+<div class="section-title"><small>INSIDE THE GYM</small><h2>Our Gallery</h2></div>
+<div class="gallery">
+<div class="photo big">🏆 TRAIN HARD</div><div class="photo">🏋️ EQUIPMENT</div><div class="photo">🔥 WORKOUT</div><div class="photo">🥊 TRAINING</div><div class="photo">💪 COMMUNITY</div>
+</div>
+</section>
+
+<section id="plans">
+<div class="section-title"><small>MEMBERSHIPS</small><h2>Choose Your Plan</h2></div>
+<div class="pricing">
+<div class="price"><h3>Monthly</h3><div class="amount">₹999 <span>/ month</span></div><ul><li>Gym access</li><li>Basic trainer guidance</li><li>Locker access</li></ul><a class="btn" href="#booking">Join Now</a></div>
+<div class="price featured"><h3>Quarterly</h3><div class="amount">₹2,499 <span>/ 3 months</span></div><ul><li>Full gym access</li><li>Trainer support</li><li>Fitness assessment</li><li>Workout plan</li></ul><a class="btn" href="#booking">Join Now</a></div>
+<div class="price"><h3>Personal</h3><div class="amount">₹3,999 <span>/ month</span></div><ul><li>1-to-1 trainer</li><li>Custom workout plan</li><li>Nutrition guidance</li></ul><a class="btn" href="#booking">Join Now</a></div>
+</div>
+</section>
+
+<section>
+<div class="section-title"><small>MEMBER STORIES</small><h2>What Members Say</h2></div>
+<div class="grid reviews">
+<div class="review"><div class="stars">★★★★★</div><p>“Amazing atmosphere and trainers who actually care about your progress.”</p><small>— Karan, Member</small></div>
+<div class="review"><div class="stars">★★★★★</div><p>“The personal training sessions helped me stay consistent and motivated.”</p><small>— Priya, Member</small></div>
+<div class="review"><div class="stars">★★★★★</div><p>“Clean gym, great equipment and a really friendly community.”</p><small>— Dev, Member</small></div>
+</div>
+</section>
+
+<section class="booking" id="booking">
+<div class="section-title"><small>FREE TRIAL</small><h2>Book Your Session</h2><p>Fill the form and we'll prepare your trial session.</p></div>
+<form class="form" onsubmit="book(event)">
+<input id="name" placeholder="Your Name" required>
+<input id="phone" type="tel" placeholder="Phone Number" required>
+<select id="time" required><option value="">Preferred Time</option><option>Morning</option><option>Afternoon</option><option>Evening</option></select>
+<button class="btn" type="submit">Book Free Trial</button>
+</form>
+</section>
+
+<section>
+<div class="section-title"><small>FIND US</small><h2>Visit Our Gym</h2></div>
+<div class="map"><h3>📍 Shree Fitness</h3><p>123 Fitness Street, Vadodara, Gujarat</p><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Shree+Fitness+Vadodara" target="_blank">Open in Google Maps</a></div>
+</section>
+
+<section class="contact" id="contact">
+<div class="section-title"><small>READY?</small><h2>Start Your Journey Today.</h2><p>Message us on WhatsApp for membership details or a free trial.</p></div>
+<a class="btn" href="https://wa.me/919999999999" target="_blank">💬 WhatsApp Us</a>
+</section>
+
+<footer>© 2026 Shree Fitness • Premium Demo Website</footer>
+<div id="toast"></div>
+
+<script>
+function book(e){
+ e.preventDefault();
+ const n=document.getElementById('name').value;
+ const p=document.getElementById('phone').value;
+ const t=document.getElementById('time').value;
+ const msg=`Hi Shree Fitness! I want to book a free trial.%0AName: ${encodeURIComponent(n)}%0APhone: ${encodeURIComponent(p)}%0ATime: ${encodeURIComponent(t)}`;
+ window.open('https://wa.me/919999999999?text='+msg,'_blank');
+}
+</script>
+</body>
+</html>
